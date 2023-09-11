@@ -3,7 +3,7 @@ import styles from "./page.module.css"
 import Featured from "./components/featured/featured";
 import CategoryList from "./components/categoryList/categoryList";
 import CardList from "./components/cardList/cardList";
-import Menu from "./components/menu/menu";
+import Menu from "./components/menu/page";
 
 
 

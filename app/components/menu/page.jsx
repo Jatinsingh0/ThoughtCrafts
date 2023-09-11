@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from "./menu.module.css"
 
-const Menu = () => {
+const menu = () => {
   return (
     <div className={styles.container}>Menu</div>
   )
 }
 
-export default Menu
+export default menu
