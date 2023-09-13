@@ -1,7 +1,6 @@
 .burger{
     width: 20px;
     height: 16px;
-    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;

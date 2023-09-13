@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div className={styles.container}>
       
-       {/* <Featured /> */}
+       <Featured />
        <CategoryList />
        <div className={styles.content}>
         <CardList />
