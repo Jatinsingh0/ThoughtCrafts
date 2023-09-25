@@ -1,10 +1,20 @@
 "use client"
 import { signIn, useSession } from "next-auth/react";
 import styles from "./loginPage.module.css";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const {data, status} = useSession();
-  console.log(data, status)
+  console.log(data,status);
+  const router = useRouter();
+  
+
+  if(status === "loading"){
+     <div className={styles.loading}>loading...</div>
+  }
+  if(status === "authenticated"){
+     router.push("/")
+  }
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -16,6 +26,5 @@ const LoginPage = () => {
       </div>
     </div>
   )
-}
-
+};
 export default LoginPage
