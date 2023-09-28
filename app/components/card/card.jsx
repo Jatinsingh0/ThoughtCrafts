@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Card = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
         <div className={styles.imageContainer}>
             <Image src="" alt="" fill className={styles.image}/>
         </div>
