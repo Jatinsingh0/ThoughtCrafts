@@ -5,7 +5,7 @@ import Menu from "../components/menu/page"
 const blogPage = () => {
   return (
     <div className={styles.container}>
-        <h1 className={styles.title}>Travel Blog</h1>
+        <h1 className={styles.title}>Style Blog</h1>
         <div className={styles.content}>
             <CardList />
             <Menu />

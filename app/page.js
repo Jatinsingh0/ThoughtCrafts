@@ -13,9 +13,9 @@ const page = ({searchParams}) => {
   return (
     <div className={styles.container}>
       
-       <Featured />
-       <CategoryList />
-       <div className={styles.content}>
+        <Featured />
+        <CategoryList />
+        <div className={styles.content}>
         <CardList page = {page}/>
         <Menu />
        </div>
