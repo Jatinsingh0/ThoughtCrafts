@@ -4,7 +4,7 @@ import Card from '../card/card'
 import Pagination from '../pagination/pagination'
 
 
-const getData = async(page) => {
+const getData = async(page, cat) => {
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}`,
   {
     cache: "no-store",
@@ -27,10 +27,9 @@ const CardList = async ({page}) => {
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts} >
-      {posts?.map((item)=>{
+      {posts?.map((item)=>(
          <Card item={item}key={item._id}/>
-     })}
-     <Card />
+      ))}
     </div>
       <Pagination page= {page} hasPrev = {hasPrev} hasNext = {hasNext} />
     </div>
