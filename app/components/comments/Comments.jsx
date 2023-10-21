@@ -1,9 +1,23 @@
+"use client"
+
 import Link from "next/link";
 import styles from "./comments.module.css";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+import useSWR from "swr";
 
-const Comments = () => {
-  const status = "authenticated";
+
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+  if(!res.ok){
+    throw new Error("something wrong with fetching comments")
+  }
+  return data;
+}
+const Comments = ({postSlug}) => {
+  const {status} = useSession();
+  const(isLoading, data) = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Comments</h1>
