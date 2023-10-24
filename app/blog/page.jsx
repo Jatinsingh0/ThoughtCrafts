@@ -12,7 +12,7 @@ const blogPage = ({searchParams}) => {
             <CardList cat={cat} page={page}/>
             <Menu />
         </div>
-    </div>
+    </div> 
   )
 }
 
