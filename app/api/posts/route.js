@@ -27,3 +27,24 @@ export const GET = async (req) => {
     }
 };
 
+
+// create a Post
+
+export const POST = async (req) => {
+    const session = await getAuthSession();
+    if(!session){
+      console.log(err)
+      return new NextResponse(JSON.stringify("User Not Authenticated", {staus: 401}));
+    }
+    try{
+      const body = await req.json();
+      const post = await prisma.post.create({
+        data: {...body, userEmail: session.user.email},
+    });
+    
+    return new NextResponse(JSON.stringify(post, {status: 200}))
+  }catch(err){
+    console.log(err)
+    return new NextResponse(JSON.stringify("something went wrong with comment server", {staus: 500}));
+  }
+}

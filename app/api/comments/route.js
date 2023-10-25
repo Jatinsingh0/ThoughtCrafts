@@ -21,7 +21,7 @@ export const GET = async (req) => {
 }
 
 
-// Create comment
+// Create a comment
 export const POST = async (req) => {
     const session = await getAuthSession();
     if(!session){
