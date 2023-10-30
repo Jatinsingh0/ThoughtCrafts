@@ -8,7 +8,6 @@ const Footer = () => {
     <div className={styles.container}>
     <div className={styles.info}>
       <div className={styles.logo}>
-        <Image src="" alt="" width={50} height={50} />
         <h1 className={styles.logoText}>ThoughtCrafts</h1>
       </div>
       <p className={styles.desc}>
@@ -18,10 +17,10 @@ const Footer = () => {
         repellendus dorales.
       </p>
       <div className={styles.icons}>
-        <Image src="" alt="" width={18} height={18} />
-        <Image src="" alt="" width={18} height={18} />
-        <Image src="" alt="" width={18} height={18} />
-        <Image src="" alt="" width={18} height={18} />
+        <Image src="/facebookLogo.png" alt="" width={20} height={20} />
+        <Image src="/telegramLogo.jpeg" alt="" width={20} height={20} />
+        <Image src="/linkdinLogo.png" alt="" width={20} height={20} />
+        <Image src="/twitterLogo.png" alt="" width={20} height={20} />
       </div>
     </div>
     <div className={styles.links}>
