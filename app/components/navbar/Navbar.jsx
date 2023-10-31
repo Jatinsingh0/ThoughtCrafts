@@ -9,9 +9,13 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <Image src="/facebookLogo.png" alt="img" width={26} height={26}/>
+        <Link href="https://www.linkedin.com/in/jatin-singh-a9147526b">
+            <Image src="/linkdinLogo.png" alt="img" width={26} height={26}/>
+        </Link>
+        <Link href="https://github.com/Jatinsingh0">
+            <Image src="/github.png" alt="img" width={26} height={26}/>
+        </Link>
         <Image src="/telegramLogo.jpeg" alt="img" width={26} height={26}/>
-        <Image src="/linkdinLogo.png" alt="img" width={26} height={26}/>
         <Image src="/twitterLogo.png" alt="img" width={26} height={26}/>
       </div>
 
@@ -20,7 +24,7 @@ const Navbar = () => {
       <div className={styles.links}>
         <Link href="/" className={styles.link}>Homepage</Link>
         <Link href="/" className={styles.link}>About</Link>
-        <Link href="/" className={styles.link}>contact</Link>
+        <Link href="/contact" className={styles.link}>contact</Link>
         <AuthLinks />
 
       </div>

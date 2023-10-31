@@ -17,10 +17,14 @@ const Footer = () => {
         repellendus dorales.
       </p>
       <div className={styles.icons}>
-        <Image src="/facebookLogo.png" alt="" width={20} height={20} />
-        <Image src="/telegramLogo.jpeg" alt="" width={20} height={20} />
-        <Image src="/linkdinLogo.png" alt="" width={20} height={20} />
-        <Image src="/twitterLogo.png" alt="" width={20} height={20} />
+        <Link href="https://www.linkedin.com/in/jatin-singh-a9147526b">
+            <Image src="/linkdinLogo.png" alt="img" width={26} height={26}/>
+        </Link>
+        <Link href="https://github.com/Jatinsingh0">
+            <Image src="/github.png" alt="img" width={26} height={26}/>
+        </Link>
+        <Image src="/telegramLogo.jpeg" alt="" width={26} height={26} />
+        <Image src="/twitterLogo.png" alt="" width={26} height={26} />
       </div>
     </div>
     <div className={styles.links}>
