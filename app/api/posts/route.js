@@ -35,7 +35,7 @@ export const POST = async (req) => {
     const session = await getAuthSession();
     if(!session){
       console.log(err)
-      return new NextResponse(JSON.stringify("User Not Authenticated", {staus: 401}));
+      return new NextResponse(JSON.stringify("User Not Authenticated", {status: 401}));
     }
     try{
       const body = await req.json();
