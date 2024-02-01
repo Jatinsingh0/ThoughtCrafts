@@ -10,7 +10,7 @@ const getData = async () => {
     cache: "no-store",
   });
   if(!res.ok){
-    throw new Error("Failed to fetch data")
+    throw new Error("Failed to fetch Category data")
   }
   return res.json();
 
