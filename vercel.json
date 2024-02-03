@@ -1,18 +1,17 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "package.json", "use": "@vercel/node" }
-    ],
-    "env": {
-      "NEXT_PUBLIC_API_URL": "@thoughtcrafts/api"
-    },
-    "build": {
-      "env": {
-        "NEXT_PUBLIC_API_URL": "@thoughtcrafts/api"
-      },
-      "commands": {
-        "build": "prisma generate && next build"
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "env": {
+          "NEXT_PUBLIC_API_URL": "@thoughtcrafts/api"
+        }
       }
     }
-  }
+  ]
+}
+
+
   
