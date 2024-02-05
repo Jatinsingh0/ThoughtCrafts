@@ -5,7 +5,7 @@ import Comments from "../../components/comments/Comments"
 
 
 const getData = async(slug) => {
-  const res = await fetch(`https://thought-crafts-jatinsingh0.vercel.app/api/posts/${slug}`,
+  const res = await fetch(`https://thought-crafts.vercel.app/api/posts/${slug}`,
   {
     cache: "no-store",
   });

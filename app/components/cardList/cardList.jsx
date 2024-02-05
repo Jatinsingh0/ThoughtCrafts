@@ -5,7 +5,7 @@ import Pagination from '../pagination/pagination'
 
 
 const getData = async(page, cat) => {
-  const res = await fetch(`https://thought-crafts-jatinsingh0.vercel.app/api/posts?page=${page}&cat=${cat || " "}`,
+  const res = await fetch(`https://thought-crafts.vercel.app/api/posts?page=${page}&cat=${cat || " "}`,
   {
     cache: "no-store",
   });
