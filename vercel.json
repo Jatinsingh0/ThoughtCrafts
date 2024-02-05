@@ -2,16 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "env": {
-          "NEXT_PUBLIC_API_URL": "@thoughtcrafts/api"
-        }
-      }
+      "src": "next.config.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
+
 
 
   
