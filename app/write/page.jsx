@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./writePage.module.css";
@@ -12,10 +13,12 @@ import {
 import { app } from "../utils/firebase";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import { useSession } from "next-auth/react";
 
 const WritePage = () => {
+  const { status } = useSession();
   const router = useRouter();
-  const ReactQuill = dynamic(() => import('react-quill'), {ssr: false});
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
@@ -67,6 +70,14 @@ const WritePage = () => {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
 
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "unauthenticated") {
+    router.push("/");
+  }
+
   const handleSubmit = async () => {
     const res = await fetch("/api/posts", {
       method: "POST",
@@ -97,7 +108,7 @@ const WritePage = () => {
         className={styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
-        <option value="style">style</option>
+        <option value="sport">sport</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
         <option value="culture">culture</option>
@@ -106,7 +117,7 @@ const WritePage = () => {
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+          <Image src="/plusIcon.png" alt="" width={34} height={34} />
         </button>
         {open && (
           <div className={styles.add}>
@@ -118,20 +129,13 @@ const WritePage = () => {
             />
             <button className={styles.addButton}>
               <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
+                <Image src="/uploadImage.png" alt="" width={16} height={16} />
               </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
             </button>
           </div>
         )}
-        <ReactQuill
+        <textArea
           className={styles.textArea}
-          theme="bubble"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."

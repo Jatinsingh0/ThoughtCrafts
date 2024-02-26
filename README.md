@@ -1,4 +1,4 @@
-IN MAKEING!
+IN this project, i got lots of problem related to API's or many more. which becomes hard to resolve. so,I decided to make this Project again name called BLOGEASE. you can find in my repositories.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

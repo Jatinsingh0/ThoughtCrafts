@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 
 const getData = async () => {
-  const res = await fetch("https://thought-crafts.vercel.app/api/categories",
+  const res = await fetch("http://localhost:3001/api/categories",
   {
     cache: "no-store",
   });
